@@ -1,0 +1,9 @@
+{
+  "generators": {
+    "shared-component": {
+      "factory": "./src/generators/shared-component/generator",
+      "schema": "./src/generators/shared-component/schema.json",
+      "description": "shared-component generator"
+    }
+  }
+}
