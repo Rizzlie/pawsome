@@ -1,0 +1,8 @@
+<button
+  (click)="handleClick()"
+  [disabled]="disabled()"
+  [class]="variant()"
+  [class.outlined]="outlined()"
+>
+  <ng-content />
+</button>

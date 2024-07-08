@@ -1,0 +1,35 @@
+$variants: 'primary' var(--primary-dark) var(--primary-dark-hover),
+  'accent' var(--accent-dark) var(--accent-dark-hover);
+
+button {
+  border: 1px solid var(--primary-dark);
+  color: var(--primary-dark);
+  border-radius: var(--border-radius);
+  background-color: #fff;
+  cursor: pointer;
+  font-size: 0.875rem;
+  padding: 0.425rem 0.75rem;
+  transition: var(--transition-duration) ease-in all;
+
+  @each $name, $color, $hoverColor in $variants {
+    &.#{$name} {
+      border-color: transparent;
+      background-color: $color;
+      color: #fff;
+
+      &:hover {
+        background-color: $hoverColor;
+      }
+
+      &.outlined {
+        background-color: #fff;
+        border-color: $color;
+        color: $color;
+
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+  }
+}

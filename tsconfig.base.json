@@ -15,8 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@pawsome/client/styles": ["libs/client/styles/module.scss"],
+      "@pawsome/api/pets": ["libs/api/modules/pets/src/index.ts"],
       "@pawsome/client/shared": ["libs/client/shared/src/index.ts"],
-      "@pawsome/api/pets": ["libs/api/modules/pets/src/index.ts"]
+      "@pawsome/storybook": ["libs/storybook/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
