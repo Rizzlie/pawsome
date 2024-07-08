@@ -1,0 +1,30 @@
+@layer theme {
+  :root {
+    --layout-default-repeat: 12;
+    --layout-default-gap: 15px;
+
+    --background: #fbffff;
+
+    --primary-light: #ececec;
+    --primary-light-hover: #e3e3e2;
+    --primary-light-active: #c4c5c3;
+    --primary-normal: #41433d;
+    --primary-normal-hover: #3b3c37;
+    --primary-normal-active: #343631;
+    --primary-dark: #31322e;
+    --primary-dark-hover: #272825;
+    --primary-dark-active: #1d1e1b;
+    --primary-darker: #171715;
+
+    --accent-light: #fee6ea;
+    --accent-light-hover: #fddadf;
+    --accent-light-active: #fbb2bd;
+    --accent-normal: #f1082a;
+    --accent-normal-hover: #d90726;
+    --accent-normal-active: #c10622;
+    --accent-dark: #b50620;
+    --accent-dark-hover: #910519;
+    --accent-dark-active: #6c0413;
+    --accent-darker: #54030f;
+  }
+}

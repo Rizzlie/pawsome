@@ -1,0 +1,12 @@
+body {
+  font-family: var(--ff-default);
+  color: var(--primary-normal);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--accent-normal);
+  font-family: var(--ff-accent);
+}

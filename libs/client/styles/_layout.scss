@@ -1,0 +1,23 @@
+@layer layout {
+  .container {
+    --_grid-repeat: var(--grid-repeat, var(--layout-default-repeat));
+    --_repeating-grid-gap: var(--grid-gap, var(--layout-default-gap));
+
+    max-width: var(--mw);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(var(--layout-default-repeat), 1fr);
+    gap: var(--layout-default-gap);
+
+    .full {
+      grid-column: 1 / calc(var(--layout-default-repeat) + 1);
+    }
+
+    @for $i from 1 through 12 {
+      .col-#{$i} {
+        grid-column: 1 / calc(#{$i} + 1);
+      }
+    }
+  }
+}
