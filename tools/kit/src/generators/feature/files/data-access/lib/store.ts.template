@@ -1,0 +1,35 @@
+import { inject } from '@angular/core';
+import { patchState, signalStore, withHooks, withMethods, withState } from '@ngrx/signals';
+import { <%= libClassName %>Service } from './<%= libFileName %>.service';
+
+type <%= libClassName %>State = {
+  callState: 'init' | 'loading' | 'loaded' | { error: string };
+}
+
+const initialState: <%= libClassName %>State = {
+  callState: 'init',
+}
+
+export const <%= libClassName %>Store = signalStore(
+  { providedIn: 'root' },
+
+  withState(initialState),
+
+  withMethods((state) => {
+    const <%= libPropertyName %>Service = inject(<%= libClassName %>Service);
+
+    return {
+      init: async () => {
+        <%= libPropertyName %>Service.init();
+
+        patchState(state, { callState: 'loaded' });
+      }
+    }
+  }),
+
+  withHooks({
+    onInit({ init }) {
+      init();
+    }
+  })
+);
