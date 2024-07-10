@@ -3,6 +3,7 @@ import { FeatureGeneratorSchema } from './schema';
 import { createDataAccessLibrary } from './utils/data-access';
 import { createFeatureShellLibrary } from './utils/feature-shell';
 import { createUILibrary } from './utils/ui';
+import { createUtilsLibrary } from './utils/utils';
 
 export async function featureGenerator(
   tree: Tree,
@@ -19,7 +20,7 @@ export async function featureGenerator(
   }
 
   if (options.libTypes.includes('utils')) {
-    // await createUtilsLibrary(tree, options);
+    await createUtilsLibrary(tree, options);
   }
 
   await formatFiles(tree);
