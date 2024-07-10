@@ -4,6 +4,11 @@
       "factory": "./src/generators/shared-component/generator",
       "schema": "./src/generators/shared-component/schema.json",
       "description": "shared-component generator"
+    },
+    "feature": {
+      "factory": "./src/generators/feature/generator",
+      "schema": "./src/generators/feature/schema.json",
+      "description": "feature generator"
     }
   }
 }

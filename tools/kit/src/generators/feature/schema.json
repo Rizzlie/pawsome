@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/schema",
+  "$id": "Feature",
+  "title": "",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What name would you like to use?"
+    },
+    "app": {
+      "type": "string",
+      "description": "Provide the app",
+      "x-prompt": {
+        "message": "In which app feature should be generated?",
+        "type": "list",
+        "items": [
+          {
+            "value": "client",
+            "label": "Client"
+          },
+          {
+            "value": "admin",
+            "label": "Admin"
+          }
+        ]
+      }
+    },
+    "libTypes": {
+      "type": "array",
+      "description": "Provide the library type",
+      "x-prompt": {
+        "message": "Which type of library would you like to generate?",
+        "type": "list",
+        "multiselect": "true",
+        "items": [
+          {
+            "value": "data-access",
+            "label": "Data Access"
+          },
+          {
+            "value": "ui",
+            "label": "UI"
+          },
+          {
+            "value": "utils",
+            "label": "Utils"
+          }
+        ]
+      }
+    }
+  },
+  "required": ["name"]
+}
