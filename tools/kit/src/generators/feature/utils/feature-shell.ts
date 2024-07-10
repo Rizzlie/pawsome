@@ -67,7 +67,7 @@ function addRouting(
   generateFiles(
     tree,
     join(__dirname, '..', 'files', 'feature-shell'),
-    `${sourceRoot}/lib`,
+    sourceRoot,
     {
       libClassName: className,
       pathToComponent: fileName,
