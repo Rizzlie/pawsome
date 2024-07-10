@@ -1,33 +1,21 @@
 import { libraryGenerator } from '@nx/angular/generators';
-import {
-  generateFiles,
-  names,
-  readProjectConfiguration,
-  Tree,
-} from '@nx/devkit';
+import { generateFiles, readProjectConfiguration, Tree } from '@nx/devkit';
 import { join } from 'path';
 import { FeatureGeneratorSchema } from '../schema';
+import { defaultLibraryConfig, libraryConfig } from '../utils';
 
 export async function createUtilsLibrary(
   tree: Tree,
   schema: FeatureGeneratorSchema
 ) {
-  const fullName = `${schema.app} Domains ${schema.name} Utils`;
-  const { fileName: libraryName } = names(fullName);
+  const config = libraryConfig(schema, 'utils');
 
   await libraryGenerator(tree, {
-    name: libraryName,
-    prefix: 'pawsome',
-    directory: `./libs/${schema.app}/domains/${schema.name}/utils`,
-    standalone: false,
-    skipModule: true,
-    projectNameAndRootFormat: 'as-provided',
-    tags: 'scope:utils',
-    style: 'scss',
-    importPath: `@pawsome/${schema.app}/domains/${schema.name}/utils`,
+    ...defaultLibraryConfig,
+    ...config,
   });
 
-  const project = readProjectConfiguration(tree, libraryName);
+  const project = readProjectConfiguration(tree, config.name);
 
   generateFiles(
     tree,

@@ -8,30 +8,21 @@ import {
 } from '@nx/devkit';
 import { join } from 'path';
 import { FeatureGeneratorSchema } from '../schema';
+import { defaultLibraryConfig, libraryConfig } from '../utils';
 
 export async function createFeatureShellLibrary(
   tree: Tree,
   schema: FeatureGeneratorSchema
 ) {
-  const { className } = featureShellNames();
-
-  const fullName = `${schema.app} Domains ${schema.name} ${className}`;
-  const { fileName: libraryName } = names(fullName);
+  const config = libraryConfig(schema, 'feature-shell');
 
   await libraryGenerator(tree, {
-    name: libraryName,
-    directory: `./libs/${schema.app}/domains/${schema.name}/feature-shell`,
-    standalone: false,
-    skipModule: true,
+    ...defaultLibraryConfig,
+    ...config,
     flat: true,
-    prefix: 'pawsome',
-    projectNameAndRootFormat: 'as-provided',
-    tags: 'scope:feature-shell',
-    style: 'scss',
-    importPath: `@pawsome/${schema.app}/domains/${schema.name}/feature-shell`,
   });
 
-  const project = readProjectConfiguration(tree, libraryName);
+  const project = readProjectConfiguration(tree, config.name);
 
   await addComponent(tree, schema, project.sourceRoot);
   addRouting(tree, schema, project.sourceRoot);
@@ -85,5 +76,7 @@ function featureShellNames() {
 }
 
 function getSelector(schema: FeatureGeneratorSchema) {
-  return `pawsome-${names(`${schema.name} Feature Shell`).fileName}`;
+  return `${defaultLibraryConfig.prefix}-${
+    names(`${schema.name} Feature Shell`).fileName
+  }`;
 }
