@@ -64,13 +64,6 @@ function addRouting(
   const { className, fileName, propertyName } = featureShellNames();
   const selector = getSelector(schema);
 
-  console.log({
-    libClassName: className,
-    pathToComponent: fileName,
-    libPropertyName: propertyName,
-    componentSelector: selector,
-  });
-
   generateFiles(
     tree,
     join(__dirname, '..', 'files', 'feature-shell'),

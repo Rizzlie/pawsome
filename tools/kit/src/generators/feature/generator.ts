@@ -1,6 +1,7 @@
 import { formatFiles, Tree } from '@nx/devkit';
 import { FeatureGeneratorSchema } from './schema';
 import { createFeatureShellLibrary } from './utils/feature-shell';
+import { createUILibrary } from './utils/ui';
 
 export async function featureGenerator(
   tree: Tree,
@@ -9,7 +10,7 @@ export async function featureGenerator(
   await createFeatureShellLibrary(tree, options);
 
   if (options.libTypes.includes('ui')) {
-    // await createUILibrary(tree, options);
+    await createUILibrary(tree, options);
   }
 
   if (options.libTypes.includes('data-access')) {
