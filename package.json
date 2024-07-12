@@ -80,7 +80,7 @@
     "@angular/ssr": "~18.0.0",
     "@fontsource-variable/inter": "^5.0.19",
     "@fontsource-variable/playfair-display": "^5.0.25",
-    "@ngrx/signals": "^17.2.0",
+    "@ngrx/signals": "^18.0.0-rc.2",
     "axios": "^1.6.0",
     "express": "~4.18.2",
     "react": "^18.2.0",
