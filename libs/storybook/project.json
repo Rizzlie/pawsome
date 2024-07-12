@@ -40,7 +40,7 @@
         }
       }
     },
-    "test": {
+    "local-test": {
       "executor": "nx:run-commands",
       "options": {
         "command": "test-storybook -c libs/storybook/.storybook --url=http://localhost:4400"

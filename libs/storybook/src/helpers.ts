@@ -21,7 +21,10 @@ type TransformSignalInputType<T> = {
 };
 
 // Type to extract the type from InputSignal or InputSignalWithTransform
-type TransformInputType<T> = T extends InputSignalWithTransform<infer U, any>
+type TransformInputType<T> = T extends InputSignalWithTransform<
+  infer U,
+  unknown
+>
   ? U
   : T extends InputSignal<infer U>
   ? U
