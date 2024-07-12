@@ -11,6 +11,9 @@
       "options": {
         "jestConfig": "libs/api/modules/pets/jest.config.ts"
       }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
     }
   }
 }
