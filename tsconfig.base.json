@@ -16,6 +16,18 @@
     "baseUrl": ".",
     "paths": {
       "@pawsome/api/pets": ["libs/api/modules/pets/src/index.ts"],
+      "@pawsome/client/domains/homepage/data-access": [
+        "libs/client/domains/homepage/data-access/src/index.ts"
+      ],
+      "@pawsome/client/domains/homepage/feature-shell": [
+        "libs/client/domains/homepage/feature-shell/src/index.ts"
+      ],
+      "@pawsome/client/domains/homepage/ui": [
+        "libs/client/domains/homepage/ui/src/index.ts"
+      ],
+      "@pawsome/client/domains/homepage/utils": [
+        "libs/client/domains/homepage/utils/src/index.ts"
+      ],
       "@pawsome/client/shared": ["libs/client/shared/src/index.ts"],
       "@pawsome/client/styles": ["libs/client/styles/module.scss"],
       "@pawsome/kit": ["tools/kit/src/index.ts"],

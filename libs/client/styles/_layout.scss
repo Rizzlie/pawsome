@@ -16,7 +16,7 @@
 
     @for $i from 1 through 12 {
       .col-#{$i} {
-        grid-column: 1 / calc(#{$i} + 1);
+        grid-column: span $i;
       }
     }
   }
